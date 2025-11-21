@@ -18,7 +18,7 @@ Cypress.Commands.add('adicionarMoletomNoCarrinho', () => {
   cy.validarValores('#shipping-fee', 19.90);
   cy.validarValores('#total-with-shipping', 78.90);
 
-  cy.get('a[href="/checkout.html"]').click(); // Posiciona na página de checkout
+  cy.get('a[href="/checkout.html"]').click();
 });
 
 Cypress.Commands.add('validarValores', (selector, expectedValue) => {
@@ -37,7 +37,7 @@ Cypress.Commands.add('adicionarMultiplosProdutos', (produtos) => {
   cy.visit('/');
   const homePage = new (require('../e2e/page/web/HomePage')).HomePage();
   homePage.validarProdutosVisiveis(['Moletom com capuz "Se você acha que nada é impossível..."', 'Moletom com capuz "Na minha máquina funciona"']);
-  homePage.adicionarMultiplosProdutos(produtos); // Ex: [{id:1, qtd:1}, {id:2, qtd:1}]
+  homePage.adicionarMultiplosProdutos(produtos);
   homePage.irParaCarrinho();
 });
 
